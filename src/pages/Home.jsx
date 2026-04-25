@@ -1,92 +1,86 @@
 import { useState } from "react";
 import {
-  Sparkles,
-  Zap,
   ShieldCheck,
-  Layers,
+  FileSearch,
+  Gavel,
+  GraduationCap,
   ArrowRight,
-  Github,
-  Twitter,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Star,
   Menu,
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
   { label: "FAQ", href: "#faq" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
-const features = [
-  {
-    icon: Zap,
-    title: "Lightning fast",
-    body: "Built on a modern stack with edge-ready rendering so pages feel instant on any device.",
-  },
+const services = [
   {
     icon: ShieldCheck,
-    title: "Secure by default",
-    body: "Sensible defaults, hardened headers, and zero-trust patterns keep your users safe.",
+    title: "Personalized Credit Solutions",
+    body: "Tailored strategies to address your unique credit challenges and improve your financial health.",
   },
   {
-    icon: Layers,
-    title: "Composable",
-    body: "Drop-in components and a clean design system you can extend without fighting the framework.",
+    icon: FileSearch,
+    title: "Credit Report Analysis",
+    body: "In-depth review of your credit report to identify errors, inaccuracies, or negative items affecting your score.",
   },
   {
-    icon: Sparkles,
-    title: "Delightful UX",
-    body: "Thoughtful interactions, accessible primitives, and motion that respects user preferences.",
-  },
-];
-
-const steps = [
-  { n: "01", title: "Clone", body: "Pull the starter and install dependencies in one command." },
-  { n: "02", title: "Customize", body: "Swap colors, copy, and components to match your brand." },
-  { n: "03", title: "Ship", body: "Deploy anywhere static hosting runs — Vercel, Netlify, or your own." },
-];
-
-const tiers = [
-  {
-    name: "Starter",
-    price: "$0",
-    period: "forever",
-    features: ["1 project", "Community support", "Core components"],
-    cta: "Get started",
-    highlighted: false,
+    icon: Gavel,
+    title: "Dispute Resolution",
+    body: "We handle disputes with credit bureaus and creditors to remove inaccurate or unfair entries from your report.",
   },
   {
-    name: "Pro",
-    price: "$19",
-    period: "per month",
-    features: ["Unlimited projects", "Priority support", "Premium templates", "Team workspace"],
-    cta: "Start free trial",
-    highlighted: true,
-  },
-  {
-    name: "Team",
-    price: "$49",
-    period: "per month",
-    features: ["Everything in Pro", "SSO & audit logs", "Dedicated success manager"],
-    cta: "Contact sales",
-    highlighted: false,
+    icon: GraduationCap,
+    title: "Ongoing Support & Education",
+    body: "Guidance and tools to help you maintain a healthy credit score and make informed financial decisions.",
   },
 ];
 
 const faqs = [
   {
-    q: "Do I need an account to try it?",
-    a: "Nope — the starter is open source and works out of the box. Sign up only when you want hosted features.",
+    q: "How does credit repair work?",
+    a: "We start by reviewing your credit report from all three bureaus, identifying inaccurate, outdated, or unverifiable items, and then dispute them on your behalf. Alongside disputes, we coach you on the habits that help raise and maintain your score.",
   },
   {
-    q: "Can I bring my own components?",
-    a: "Yes. The system is unopinionated about your component library and works alongside Radix, shadcn, or your own.",
+    q: "How long does the credit repair process take?",
+    a: "Most clients see meaningful changes within 3 to 6 months. The exact timeline depends on the items on your report, how quickly bureaus respond, and how consistently positive credit behaviors are practiced.",
   },
   {
-    q: "Is it production ready?",
-    a: "Absolutely. The defaults are tuned for real workloads and the build output is small and cacheable.",
+    q: "Can you guarantee my credit score will improve?",
+    a: "By law, no credit repair company can guarantee a specific score increase. What we can guarantee is a thorough, fully compliant process and clear communication every step of the way.",
+  },
+  {
+    q: "Will credit repair help with all types of negative credit items?",
+    a: "Credit repair is most effective on inaccurate, unverifiable, or improperly reported items. Legitimate, accurately reported negative items typically remain, but we can help you build a plan to offset their impact over time.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "DJ Energizer",
+    body: "I was overwhelmed by my poor credit score, but their team guided me through every step. Within a few months, I saw a significant improvement, and now I'm able to qualify for loans I never thought possible!",
+  },
+  {
+    name: "Tia Belcher",
+    body: "After years of struggling with credit issues, I finally turned to this service. They identified errors on my report, handled the disputes, and helped me raise my score by 100 points. I'm beyond grateful!",
+  },
+  {
+    name: "Joseph Nichols",
+    body: "Their credit repair services helped me improve my score enough to refinance my car! Now I'm saving a ton with much lower monthly payments. Their expertise and dedication made it possible.",
+  },
+  {
+    name: "Winslow Celestin",
+    body: "I went from being denied credit to getting approved for my dream car, all thanks to their credit repair services. Their professionalism and dedication truly transformed my financial future.",
   },
 ];
 
@@ -99,10 +93,15 @@ export default function Home() {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-foreground text-background">
-              <Sparkles className="h-4 w-4" />
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-foreground font-bold text-background">
+              F1
             </span>
-            Lumen
+            <span className="leading-tight">
+              <span className="block text-sm font-semibold">Family 1st</span>
+              <span className="block text-xs font-medium text-muted-foreground">
+                Financial
+              </span>
+            </span>
           </a>
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((l) => (
@@ -117,16 +116,16 @@ export default function Home() {
           </nav>
           <div className="hidden items-center gap-3 md:flex">
             <a
-              href="#"
+              href="tel:+13213823869"
               className="text-sm text-muted-foreground transition hover:text-foreground"
             >
-              Sign in
+              +1 321-382-3869
             </a>
             <a
-              href="#pricing"
+              href="#contact"
               className="inline-flex items-center gap-1 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:opacity-90"
             >
-              Get started <ArrowRight className="h-4 w-4" />
+              Apply Now <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <button
@@ -152,10 +151,11 @@ export default function Home() {
                 </a>
               ))}
               <a
-                href="#pricing"
+                href="#contact"
                 className="inline-flex items-center justify-center gap-1 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background"
+                onClick={() => setMenuOpen(false)}
               >
-                Get started <ArrowRight className="h-4 w-4" />
+                Apply Now <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -165,182 +165,129 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 -top-32 h-[500px] bg-[radial-gradient(ellipse_at_center,_hsl(var(--teal)/0.18),_transparent_60%)]"
+          className="pointer-events-none absolute inset-x-0 -top-32 h-[520px] bg-[radial-gradient(ellipse_at_center,_hsl(var(--teal)/0.18),_transparent_60%)]"
         />
         <div className="mx-auto max-w-6xl px-6 pb-20 pt-20 md:pt-28">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs text-muted-foreground">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-teal" />
-              New — v1.0 is here
+              Family 1st Financial
             </span>
             <h1 className="mt-6 text-balance text-5xl font-semibold tracking-tight md:text-7xl">
-              Build beautiful products,
+              Claim your future
               <span className="block bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-                without the busywork.
+                today.
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-balance text-base text-muted-foreground md:text-lg">
-              A modern starter for teams who care about craft. Composable
-              components, sensible defaults, and a build pipeline that just works.
+              Schedule your free financial planning session. Click below to
+              claim your offer — we'll reach out to answer any questions you
+              may have.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="#pricing"
+                href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition hover:opacity-90"
               >
-                Start building <ArrowRight className="h-4 w-4" />
+                Financial Planning Session <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#features"
+                href="#services"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium text-foreground transition hover:bg-secondary"
               >
-                See features
+                See our services
               </a>
             </div>
             <p className="mt-6 text-xs text-muted-foreground">
-              No credit card required. Free forever for personal use.
+              Free consultation • No obligation • Personalized plan
             </p>
-          </div>
-
-          <div className="mx-auto mt-16 max-w-5xl">
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-2xl shadow-foreground/5">
-              <div className="rounded-xl bg-secondary/40 p-6 md:p-10">
-                <div className="grid grid-cols-3 gap-4">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="h-24 rounded-lg bg-background/80 ring-1 ring-border md:h-32"
-                    />
-                  ))}
-                </div>
-                <div className="mt-4 grid grid-cols-2 gap-4">
-                  <div className="h-32 rounded-lg bg-background/80 ring-1 ring-border md:h-48" />
-                  <div className="h-32 rounded-lg bg-background/80 ring-1 ring-border md:h-48" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="features" className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Everything you need, nothing you don't
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Opinionated where it counts, flexible everywhere else.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="rounded-2xl border border-border bg-background p-6 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-foreground/5"
-              >
-                <div className="grid h-10 w-10 place-items-center rounded-lg bg-secondary">
-                  <f.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 font-semibold">{f.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{f.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="how" className="border-t border-border/60">
+      <section id="about" className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                From zero to production in three steps
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                Family 1st Financial
+              </span>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+                Take full control of your financial future.
               </h2>
               <p className="mt-4 text-muted-foreground">
-                A workflow tuned for speed without taking shortcuts on quality.
+                Customize your credit card options to fit your unique needs. Our
+                credit repair services empower you to manage and improve your
+                credit profile for a stronger financial standing.
               </p>
+              <a
+                href="#contact"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition hover:opacity-90"
+              >
+                Apply Now <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
-            <ol className="space-y-4">
-              {steps.map((s) => (
-                <li
-                  key={s.n}
-                  className="flex gap-4 rounded-xl border border-border bg-card p-5"
-                >
-                  <span className="font-mono text-sm text-muted-foreground">{s.n}</span>
-                  <div>
-                    <h3 className="font-semibold">{s.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+              <h3 className="text-lg font-semibold">Our process</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Before creating a personalized credit repair plan, we review
+                your financial history, current credit status, and spending
+                habits. We may also perform assessments, such as analyzing your
+                credit report and identifying areas for improvement.
+              </p>
+              <ol className="mt-6 space-y-3 text-sm">
+                {[
+                  "Review financial history and goals",
+                  "Analyze current credit report",
+                  "Identify opportunities and disputes",
+                  "Build a personalized repair plan",
+                ].map((step, i) => (
+                  <li key={step} className="flex items-start gap-3">
+                    <span className="mt-0.5 grid h-6 w-6 flex-none place-items-center rounded-full bg-foreground text-xs font-semibold text-background">
+                      {i + 1}
+                    </span>
+                    <span className="text-muted-foreground">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="pricing" className="border-t border-border/60 bg-secondary/30">
+      <section id="services" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Simple pricing
+              How we help you build stronger credit
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Pay only for what you need. Cancel anytime.
+              Comprehensive credit repair services designed around your goals.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {tiers.map((t) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {services.map((s) => (
               <div
-                key={t.name}
-                className={cn(
-                  "rounded-2xl border bg-background p-6",
-                  t.highlighted
-                    ? "border-foreground shadow-xl shadow-foreground/10"
-                    : "border-border"
-                )}
+                key={s.title}
+                className="rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-foreground/5"
               >
-                {t.highlighted && (
-                  <span className="inline-flex rounded-full bg-foreground px-2.5 py-0.5 text-xs font-medium text-background">
-                    Most popular
-                  </span>
-                )}
-                <h3 className="mt-3 text-lg font-semibold">{t.name}</h3>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-4xl font-semibold tracking-tight">{t.price}</span>
-                  <span className="text-sm text-muted-foreground">/ {t.period}</span>
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-secondary">
+                  <s.icon className="h-5 w-5" />
                 </div>
-                <ul className="mt-6 space-y-2 text-sm">
-                  {t.features.map((feat) => (
-                    <li key={feat} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-foreground" />
-                      <span className="text-muted-foreground">{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#"
-                  className={cn(
-                    "mt-6 inline-flex w-full items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition",
-                    t.highlighted
-                      ? "bg-foreground text-background hover:opacity-90"
-                      : "border border-border hover:bg-secondary"
-                  )}
-                >
-                  {t.cta}
-                </a>
+                <h3 className="mt-4 font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="faq" className="border-t border-border/60">
+      <section id="faq" className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-3xl px-6 py-20">
           <h2 className="text-center text-3xl font-semibold tracking-tight md:text-4xl">
             Frequently asked questions
           </h2>
-          <div className="mt-10 divide-y divide-border rounded-2xl border border-border bg-card">
+          <div className="mt-10 divide-y divide-border rounded-2xl border border-border bg-background">
             {faqs.map((item, i) => {
               const open = openFaq === i;
               return (
@@ -372,37 +319,201 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="testimonials" className="border-t border-border/60">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              Testimonials
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Real stories from families who took control of their credit.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {testimonials.map((t) => (
+              <figure
+                key={t.name}
+                className="flex h-full flex-col rounded-2xl border border-border bg-card p-6"
+              >
+                <div className="flex gap-0.5 text-foreground">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  "{t.body}"
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-sm font-semibold">
+                    {t.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </span>
+                  <span className="font-medium">{t.name}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="border-t border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Come visit us
+            </span>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+              Get in touch
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Stop by the office or reach out — we're ready to help you get
+              started.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-border bg-background p-6">
+              <div className="grid h-10 w-10 place-items-center rounded-lg bg-secondary">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold">Location</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                5923 Old Winter Garden Rd, Ste 119
+                <br />
+                Orlando, FL 32835
+              </p>
+              <a
+                href="https://maps.google.com/?q=5923+Old+Winter+Garden+Rd+Ste+119,+Orlando,+FL+32835"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground hover:underline"
+              >
+                Get directions <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="rounded-2xl border border-border bg-background p-6">
+              <div className="grid h-10 w-10 place-items-center rounded-lg bg-secondary">
+                <Phone className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold">Contact</h3>
+              <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a
+                    href="tel:+13213823869"
+                    className="inline-flex items-center gap-2 hover:text-foreground"
+                  >
+                    <Phone className="h-4 w-4" /> +1 321-382-3869
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@family1stinvest.com"
+                    className="inline-flex items-center gap-2 hover:text-foreground"
+                  >
+                    <Mail className="h-4 w-4" /> info@family1stinvest.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-border bg-background p-6">
+              <div className="grid h-10 w-10 place-items-center rounded-lg bg-secondary">
+                <Clock className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold">Hours</h3>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                <li className="flex justify-between">
+                  <span>Mon – Sat</span>
+                  <span>12:00pm – 8:00pm</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Sunday</span>
+                  <span>Closed</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-border/60 bg-foreground text-background">
         <div className="mx-auto max-w-6xl px-6 py-16 text-center">
           <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
-            Ready to build something great?
+            Schedule your free financial planning session
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm opacity-80">
-            Spin up a new project in minutes and ship the next version of your product this week.
+            Click below to claim your offer. We'll then reach out to answer any
+            questions you may have.
           </p>
           <a
-            href="#"
+            href="tel:+13213823869"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-sm font-medium text-foreground transition hover:opacity-90"
           >
-            Get started for free <ArrowRight className="h-4 w-4" />
+            Call +1 321-382-3869 <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </section>
 
       <footer className="border-t border-border/60">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 md:flex-row">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="grid h-6 w-6 place-items-center rounded-md bg-foreground text-background">
-              <Sparkles className="h-3 w-3" />
-            </span>
-            © {new Date().getFullYear()} Lumen. All rights reserved.
+        <div className="mx-auto max-w-6xl px-6 py-10">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div>
+              <a href="#" className="flex items-center gap-2 font-semibold">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-foreground font-bold text-background">
+                  F1
+                </span>
+                Family 1st Financial
+              </a>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Helping families take full control of their financial future.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold">Visit</h4>
+              <p className="mt-2 text-sm text-muted-foreground">
+                5923 Old Winter Garden Rd, Ste 119
+                <br />
+                Orlando, FL 32835
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold">Reach us</h4>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                <li>
+                  <a
+                    href="tel:+13213823869"
+                    className="hover:text-foreground"
+                  >
+                    +1 321-382-3869
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@family1stinvest.com"
+                    className="hover:text-foreground"
+                  >
+                    info@family1stinvest.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://fam1stfinancial.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="hover:text-foreground"
+                  >
+                    fam1stfinancial.com
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="flex items-center gap-4 text-muted-foreground">
-            <a href="#" aria-label="GitHub" className="transition hover:text-foreground">
-              <Github className="h-4 w-4" />
-            </a>
-            <a href="#" aria-label="Twitter" className="transition hover:text-foreground">
-              <Twitter className="h-4 w-4" />
+          <div className="mt-10 flex flex-col items-start justify-between gap-2 border-t border-border/60 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
+            <span>
+              Copyright Johnny Jean Baptiste 4/28/2025. All rights reserved.
+            </span>
+            <a href="#" className="hover:text-foreground">
+              Privacy policy
             </a>
           </div>
         </div>
